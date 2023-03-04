@@ -7,7 +7,7 @@ Vehicle.create(title: "021 Dodge Charger", description: "The 2021 Dodge Charger,
 Vehicle.create(title: "2021 Honda Accord Hybrid", description: "he Honda Accord is like a blue-chip stock: always a smart buy, the Accord remains one of our perennial favorite vehicles, blending comfort, efficiency and driving dynamics in equal doses. You might think that adding a hybrid-electric powertrain would involve a compromise somewhere along the line, but nope, it's still really darn good.", image: "https://www.cnet.com/a/img/resize/cd07e0237541eb9c025dbf5c8162df1e0bbc2375/hub/2021/04/05/c85e08de-426b-499a-8e65-5d0952cc5fa5/accord-hybrid-1080p.jpg?auto=webp&fit=crop&height=362&width=644", brand_id: 1)
 Vehicle.create(title: "2022 chevrolet Bolt EV", description: "Outside, the Bolt EV has much sharper looks while retaining its hatchback shape. Inside, dramatic improvements abound, from general design to the actual materials in play. A 10.2-inch infotainment screen dominates the dashboard, while standard safety tech includes lane-keeping assist, automatic emergency braking and automatic high beams.", image: "https://www.cnet.com/a/img/resize/cd07e0237541eb9c025dbf5c8162df1e0bbc2375/hub/2021/04/05/c85e08de-426b-499a-8e65-5d0952cc5fa5/accord-hybrid-1080p.jpg?auto=webp&fit=crop&height=362&width=644", brand_id: 1)
 Vehicle.create(title: "ferrari 812", description: "800 cv makes it the most powerful production convertible on the market", image: "https://cdn.ferrari.com/cms/network/media/img/resize/5d70e7d4ee5f7e58630608ed-d-2.0-812gts-dynamic-focuson?", brand_id: 1)
-
+ 
 Brand.create(name:"Toyota")
 Brand.create(name:"volkswaken")
 Brand.create(name:"BMW")

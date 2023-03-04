@@ -8,14 +8,14 @@ class ApplicationController < Sinatra::Base
   # get all vehicles
   get "/vehicles" do
     vehicles = Vehicle.all
-    vehicles.to_json(only: [:id, :title, :description, :image, :brand_id])
+    vehicles.to_json(only: [:id, :title, :description, :image, :brand_id], include: :brand )
     #(include: :brand)
   end
 
   #get single vehicle
   get "/vehicles/:id" do
-    game = Vehicle.find(params[:id])
-    game.to_json(only: [:id, :title, :description, :image, :brand_id])
+    vehicle = Vehicle.find(params[:id])
+    vehicle.to_json(only: [:id, :title, :description, :image, :brand_id], include: :brand )
   end
 
   #post vehicles
@@ -26,7 +26,7 @@ class ApplicationController < Sinatra::Base
       image: params[:image],
       brand_id: params[:brand_id]
     )
-    vehicle.to_json
+    vehicle.to_json(only: [:id, :title, :description, :image, :brand_id], include: :brand )
   end
 
    #patch vehicles
@@ -38,14 +38,14 @@ class ApplicationController < Sinatra::Base
       image: params[:image],
       brand_id: params[:brand_id]
     )
-    vehicle.to_json
+    vehicle.to_json(only: [:id, :title, :description, :image, :brand_id], include: :brand )
   end
 
   #delete vehicles 
   delete "/vehicles/:id" do
     vehicle = Vehicle.find(params[:id])
     vehicle.destroy
-    vehicle.to_json
+    vehicle.to_json(only: [:id, :title, :description, :image, :brand_id], include: :brand )
   end
 
   #post brands
@@ -57,16 +57,22 @@ class ApplicationController < Sinatra::Base
   end
 
   #get all brands
-  get "/brands" do
-    brand = Brand.all
-    brand.to_json(only: [:id, :name])
+  # get "/brands" do
+  #   brand = Brand.all
+  #   brand.to_json(only: [:id, :name])
+  # end
+
+  # get a single vehicle brand
+  get '/vehicles/:id/brand' do
+    vehicle = Vehicle.find_by(params[:id])
+    vehicle.brand.name.to_json
   end
 
   #get single brand
-  get "/brands/:id" do
-    brand = Brand.find(params[:id])
-    brand.to_json(only: [:id, :name])
-  end
+  # get "/brands/:id" do
+  #   brand = Brand.find(params[:id])
+  #   brand.to_json(only: [:id, :name])
+  # end
 
    #patch brands
   patch "/brands/:id" do
