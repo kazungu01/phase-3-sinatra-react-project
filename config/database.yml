@@ -12,12 +12,12 @@ test:
   database: db/test.sqlite3
 
 production:
-  # <<: *default
-  # database: db/production.sqlite3
-  adapter: postgresql
-  database: railway
-  username: postgres
-  password: mbu3IykzbqifDnrHoFlV
-  host: containers-us-west-58.railway.app
-  port: 5617
-  pool: 5
+  <<: *default
+  database: db/production.sqlite3
+  # adapter: postgresql
+  # database: railway
+  # username: postgres
+  # password: mbu3IykzbqifDnrHoFlV
+  # host: containers-us-west-58.railway.app
+  # port: 5617
+  # pool: 5

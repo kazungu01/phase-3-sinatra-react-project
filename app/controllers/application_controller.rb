@@ -57,10 +57,10 @@ class ApplicationController < Sinatra::Base
   end
 
   #get all brands
-  # get "/brands" do
-  #   brand = Brand.all
-  #   brand.to_json(only: [:id, :name])
-  # end
+  get "/brands" do
+    brand = Brand.all
+    brand.to_json(only: [:id, :name])
+  end
 
   # get a single vehicle brand
   get '/vehicles/:id/brand' do
